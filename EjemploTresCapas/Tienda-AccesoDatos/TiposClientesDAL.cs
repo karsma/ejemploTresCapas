@@ -22,6 +22,7 @@ namespace Tienda_AccesoDatos
                 cnx.Open();
 
                 const string sqlQuery = "SELECT * FROM TIPOSCLIENTES ORDER BY Id ASC";
+
                 using (SqlCommand cmd = new SqlCommand(sqlQuery, cnx))
                 {
                     SqlDataReader dataReader = cmd.ExecuteReader();

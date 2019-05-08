@@ -29,6 +29,10 @@
         private void InitializeComponent()
         {
             this.dgvDatos = new System.Windows.Forms.DataGridView();
+            this.columnId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.columnDescripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.columnMarca = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.columnPrecio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
@@ -41,10 +45,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
-            this.columnId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.columnDescripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.columnMarca = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.columnPrecio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnNuevo = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDatos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -60,6 +61,31 @@
             this.dgvDatos.Name = "dgvDatos";
             this.dgvDatos.Size = new System.Drawing.Size(471, 231);
             this.dgvDatos.TabIndex = 0;
+            this.dgvDatos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDatos_CellClick);
+            // 
+            // columnId
+            // 
+            this.columnId.HeaderText = "Id";
+            this.columnId.Name = "columnId";
+            this.columnId.ReadOnly = true;
+            // 
+            // columnDescripcion
+            // 
+            this.columnDescripcion.HeaderText = "Descripcion";
+            this.columnDescripcion.Name = "columnDescripcion";
+            this.columnDescripcion.ReadOnly = true;
+            // 
+            // columnMarca
+            // 
+            this.columnMarca.HeaderText = "Marca";
+            this.columnMarca.Name = "columnMarca";
+            this.columnMarca.ReadOnly = true;
+            // 
+            // columnPrecio
+            // 
+            this.columnPrecio.HeaderText = "Precio";
+            this.columnPrecio.Name = "columnPrecio";
+            this.columnPrecio.ReadOnly = true;
             // 
             // btnAgregar
             // 
@@ -97,6 +123,7 @@
             this.txtId.Name = "txtId";
             this.txtId.Size = new System.Drawing.Size(78, 20);
             this.txtId.TabIndex = 4;
+            this.txtId.Text = "0";
             // 
             // txtPrecio
             // 
@@ -166,35 +193,22 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // columnId
+            // btnNuevo
             // 
-            this.columnId.HeaderText = "Id";
-            this.columnId.Name = "columnId";
-            this.columnId.ReadOnly = true;
-            // 
-            // columnDescripcion
-            // 
-            this.columnDescripcion.HeaderText = "Descripcion";
-            this.columnDescripcion.Name = "columnDescripcion";
-            this.columnDescripcion.ReadOnly = true;
-            // 
-            // columnMarca
-            // 
-            this.columnMarca.HeaderText = "Marca";
-            this.columnMarca.Name = "columnMarca";
-            this.columnMarca.ReadOnly = true;
-            // 
-            // columnPrecio
-            // 
-            this.columnPrecio.HeaderText = "Precio";
-            this.columnPrecio.Name = "columnPrecio";
-            this.columnPrecio.ReadOnly = true;
+            this.btnNuevo.Location = new System.Drawing.Point(327, 10);
+            this.btnNuevo.Name = "btnNuevo";
+            this.btnNuevo.Size = new System.Drawing.Size(75, 23);
+            this.btnNuevo.TabIndex = 14;
+            this.btnNuevo.Text = "Nuevo";
+            this.btnNuevo.UseVisualStyleBackColor = true;
+            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(543, 388);
+            this.Controls.Add(this.btnNuevo);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -236,6 +250,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn columnDescripcion;
         private System.Windows.Forms.DataGridViewTextBoxColumn columnMarca;
         private System.Windows.Forms.DataGridViewTextBoxColumn columnPrecio;
+        private System.Windows.Forms.Button btnNuevo;
     }
 }
 

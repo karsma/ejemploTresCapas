@@ -36,6 +36,7 @@ namespace TresCapas
         {
             try
             {
+
                 if (_producto == null)
                 {
                     _producto = new EProducto();
@@ -57,6 +58,7 @@ namespace TresCapas
                         TraerTodos();
                     }
                 }
+                _producto = null;
             }
             catch (Exception ex)
             {
@@ -168,6 +170,25 @@ namespace TresCapas
         private void button1_Click(object sender, EventArgs e)
         {
             TraerTodos();
+        }
+
+        private void btnNuevo_Click(object sender, EventArgs e)
+        {
+            _producto = null;
+            txtId.Text = "0";
+            txtDescripcion.Text = "";
+            txtPrecio.Text = "0.00";
+            txtMarca.Text = "";
+            dgvDatos.DataSource = null;
+
+        }
+
+        private void dgvDatos_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            txtId.Text = dgvDatos.CurrentRow.Cells[0].Value.ToString();
+            txtDescripcion.Text = dgvDatos.CurrentRow.Cells[1].Value.ToString();
+            txtMarca.Text = dgvDatos.CurrentRow.Cells[2].Value.ToString();
+            txtPrecio.Text = dgvDatos.CurrentRow.Cells[3].Value.ToString();
         }
     }
 }
